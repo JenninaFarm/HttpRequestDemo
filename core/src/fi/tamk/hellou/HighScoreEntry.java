@@ -1,4 +1,4 @@
-package fi.tamk.hello;
+package fi.tamk.hellou;
 
 /**
  * HighScoreEntry needs to have variables for all the attributes from the

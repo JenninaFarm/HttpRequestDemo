@@ -1,4 +1,4 @@
-package fi.tamk.hello;
+package fi.tamk.hellou;
 
 import android.os.Bundle;
 

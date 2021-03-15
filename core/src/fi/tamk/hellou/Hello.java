@@ -1,8 +1,7 @@
-package fi.tamk.hello;
+package fi.tamk.hellou;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Net;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -28,7 +27,6 @@ public class Hello extends ApplicationAdapter implements HighScoreListener {
 	@Override
 	public void create () {
 		HighScoreServer.readConfig("highscore.config");
-		HighScoreServer.setVerbose(true);
 		HighScoreServer.fetchHighScores(this);
 
 		otherSetup();
@@ -41,9 +39,9 @@ public class Hello extends ApplicationAdapter implements HighScoreListener {
 	}
 
 	@Override
-	public void receiveSendReply(Net.HttpResponse httpResponse) {
+	public void receiveSendReply(int httpResponse) {
 		Gdx.app.log("MainClass", "Received response from server: "
-				+ httpResponse.getStatus().getStatusCode());
+				+ httpResponse);
 		HighScoreServer.fetchHighScores(this);
 	}
 
@@ -73,6 +71,7 @@ public class Hello extends ApplicationAdapter implements HighScoreListener {
 
 	private void updateScores(List<HighScoreEntry> scores) {
 		int i = 0;
+
 		for (HighScoreEntry e : scores) {
 			String entry = e.getScore() + " - " + e.getName();
 			scoreLabels.get(i).setText(entry);
@@ -131,7 +130,7 @@ public class Hello extends ApplicationAdapter implements HighScoreListener {
 	}
 
 	private void fetchHighScores() {
-		HighScoreServer.fetchHighScores(this);
+		fi.tamk.hellou.HighScoreServer.fetchHighScores(this);
 	}
 
 	private void createNewScore() {

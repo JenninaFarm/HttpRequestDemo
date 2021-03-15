@@ -1,7 +1,5 @@
-package fi.tamk.hello;
+package fi.tamk.hellou;
 
-
-import com.badlogic.gdx.Net;
 
 import java.util.List;
 
@@ -18,19 +16,20 @@ public interface HighScoreListener {
 
     /**
      * If retrieving the high scores fails for some reason this is called.
-     * @param t error message as Throwable
+     * @param s error message as String
      */
-    void failedToRetrieveHighScores(Throwable t);
+    void failedToRetrieveHighScores(String s);
 
     /**
      * ReceiveConfirmationOnSend is called when sending high score entry is
      * successful.
+     * @param httpResponse the response code of the succeeded connection
      */
-    void receiveSendReply(Net.HttpResponse httpResponse);
+    void receiveSendReply(int httpResponse);
 
     /**
      * If sending high score entry fails this is called.
-     * @param t error message as Throwable
+     * @param s error message as String
      */
-    void failedToSendHighScore(Throwable t);
+    void failedToSendHighScore(String s);
 }

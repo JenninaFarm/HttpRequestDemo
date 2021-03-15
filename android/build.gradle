@@ -17,7 +17,7 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "fi.tamk.hello"
+        applicationId "fi.tamk.hellou"
         minSdkVersion 14
         targetSdkVersion 30
         versionCode 1
