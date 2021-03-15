@@ -46,15 +46,15 @@ public class Hello extends ApplicationAdapter implements HighScoreListener {
 	}
 
 	@Override
-	public void failedToRetrieveHighScores(Throwable t) {
+	public void failedToRetrieveHighScores(String s) {
 		Gdx.app.error("MainClass",
-				"Something went wrong while getting high scores", t);
+				"Something went wrong while getting high scores");
 	}
 
 	@Override
-	public void failedToSendHighScore(Throwable t) {
+	public void failedToSendHighScore(String s) {
 		Gdx.app.error("MainClass",
-				"Something went wrong while sending a high scoreField entry", t);
+				"Something went wrong while sending a high scoreField entry");
 	}
 
 	private void otherSetup() {
